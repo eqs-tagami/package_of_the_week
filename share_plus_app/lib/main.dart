@@ -40,6 +40,7 @@ class DemoAppState extends State<DemoApp> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
+                  // シェアする文字を入力する箇所
                   TextField(
                     decoration: const InputDecoration(
                       labelText: 'Share text:',
@@ -50,6 +51,7 @@ class DemoAppState extends State<DemoApp> {
                       text = value;
                     }),
                   ),
+                  // シェアする内容を入力する箇所
                   TextField(
                     decoration: const InputDecoration(
                       labelText: 'Share subject:',
@@ -62,6 +64,8 @@ class DemoAppState extends State<DemoApp> {
                   ),
                   const Padding(padding: EdgeInsets.only(top: 12.0)),
                   ImagePreviews(imagePaths, onDelete: _onDeleteImage),
+
+                  // シミュレーターではこちら動きませんでした。
                   ListTile(
                     leading: const Icon(Icons.add),
                     title: const Text('Add image'),
