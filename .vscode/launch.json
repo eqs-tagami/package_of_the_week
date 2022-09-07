@@ -1,0 +1,128 @@
+{
+    // IntelliSense を使用して利用可能な属性を学べます。
+    // 既存の属性の説明をホバーして表示します。
+    // 詳細情報は次を確認してください: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "animated_text_kit_app",
+            "cwd": "animated_text_kit_app",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "animated_text_kit_app (profile mode)",
+            "cwd": "animated_text_kit_app",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "animated_text_kit_app (release mode)",
+            "cwd": "animated_text_kit_app",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "carousel_slider_app",
+            "cwd": "carousel_slider_app",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "carousel_slider_app (profile mode)",
+            "cwd": "carousel_slider_app",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "carousel_slider_app (release mode)",
+            "cwd": "carousel_slider_app",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "font_awesome_app",
+            "cwd": "font_awesome_app",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "font_awesome_app (profile mode)",
+            "cwd": "font_awesome_app",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "font_awesome_app (release mode)",
+            "cwd": "font_awesome_app",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "share_plus_app",
+            "cwd": "share_plus_app",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "share_plus_app (profile mode)",
+            "cwd": "share_plus_app",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "share_plus_app (release mode)",
+            "cwd": "share_plus_app",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "sms_autofill_app",
+            "cwd": "sms_autofill_app",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "sms_autofill_app (profile mode)",
+            "cwd": "sms_autofill_app",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "sms_autofill_app (release mode)",
+            "cwd": "sms_autofill_app",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "table_calendar_app",
+            "cwd": "table_calendar_app",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "table_calendar_app (profile mode)",
+            "cwd": "table_calendar_app",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "table_calendar_app (release mode)",
+            "cwd": "table_calendar_app",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        }
+    ]
+}

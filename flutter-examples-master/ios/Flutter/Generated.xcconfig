@@ -1,0 +1,15 @@
+// This is a generated file; do not edit or check into version control.
+FLUTTER_ROOT=/Users/shoto/fvm/versions/3.3.0
+FLUTTER_APPLICATION_PATH=/Users/shoto/Documents/daichi_group/programming/flutter/package_of_the_week/flutter-examples-master
+COCOAPODS_PARALLEL_CODE_SIGN=true
+FLUTTER_TARGET=/Users/shoto/Documents/daichi_group/programming/flutter/package_of_the_week/flutter-examples-master/lib/main.dart
+FLUTTER_BUILD_DIR=build
+FLUTTER_BUILD_NAME=20.2.36
+FLUTTER_BUILD_NUMBER=20.2.36
+EXCLUDED_ARCHS[sdk=iphonesimulator*]=i386
+EXCLUDED_ARCHS[sdk=iphoneos*]=armv7
+DART_DEFINES=RkxVVFRFUl9XRUJfQVVUT19ERVRFQ1Q9dHJ1ZQ==
+DART_OBFUSCATION=false
+TRACK_WIDGET_CREATION=true
+TREE_SHAKE_ICONS=false
+PACKAGE_CONFIG=/Users/shoto/Documents/daichi_group/programming/flutter/package_of_the_week/flutter-examples-master/.dart_tool/package_config.json
