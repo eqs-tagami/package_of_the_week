@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 // ignore: depend_on_referenced_packages
 import 'package:intl/intl.dart';
-import 'package:syncfusion_flutter_datepicker/datepicker.dart';
+import 'datepicker.dart';
 
 void main() {
   return runApp(MyApp());
@@ -82,11 +82,14 @@ class MyAppState extends State<MyApp> {
                   right: 0,
                   bottom: 0,
                   child: SfDateRangePicker(
+                    toggleDaySelection: true,
                     onSelectionChanged: _onSelectionChanged,
-                    selectionMode: DateRangePickerSelectionMode.multiRange,
-                    initialSelectedRange: PickerDateRange(
-                        DateTime.now().subtract(const Duration(days: 4)),
-                        DateTime.now().add(const Duration(days: 3))),
+                    showNavigationArrow: true,
+                    selectionMode: DateRangePickerSelectionMode.multiple,
+                    navigationMode: DateRangePickerNavigationMode.none,
+                    // initialSelectedRange: PickerDateRange(
+                    //     DateTime.now().subtract(const Duration(days: 4)),
+                    //     DateTime.now().add(const Duration(days: 3))),
                   ),
                 )
               ],
