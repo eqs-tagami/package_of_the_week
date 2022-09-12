@@ -11969,6 +11969,8 @@ class _PickerViewState extends State<_PickerView>
     _monthView!.selectionNotifier.value = !_monthView!.selectionNotifier.value;
   }
 
+  int beforeIndex = -1;
+
   void _dragUpdate(DragUpdateDetails details) {
     widget.getPickerStateDetails(_pickerStateDetails);
     final double xPosition = details.localPosition.dx;
@@ -11983,9 +11985,10 @@ class _PickerViewState extends State<_PickerView>
     }
 
     final int index = _getSelectedIndex(xPosition, yPosition);
-    if (index == -1) {
+    if (index == -1 || beforeIndex == index) {
       return;
     }
+    beforeIndex = index;
 
     final dynamic selectedDate = widget.visibleDates[index];
     if (!DateRangePickerHelper.isEnabledDate(
@@ -12079,29 +12082,44 @@ class _PickerViewState extends State<_PickerView>
       case DateRangePickerSelectionMode.range:
         {
           //// Check the start date of the range updated or not, if not updated then create the new range.
-          if (!_isDragStart) {
-            // お
+          if (_isDragStart) {
+            final int selectedIndex =
+                DateRangePickerHelper.isDateIndexInCollection(
+                    _pickerStateDetails.selectedDates, selectedDate);
+            if (selectedIndex == -1) {
+              _pickerStateDetails.selectedDates ??= <dynamic>[];
+              _pickerStateDetails.selectedDates!.add(selectedDate);
+            } else {
+              _pickerStateDetails.selectedDates!.removeAt(selectedIndex);
+            }
+          }
+          // if (!_isDragStart) {
+          //   // お
+          //   _pickerStateDetails.selectedRange = widget.picker.isHijri
+          //       ? HijriDateRange(selectedDate, null)
+          //       : PickerDateRange(selectedDate, null);
+          // } else {
+          if (_pickerStateDetails.selectedRange != null &&
+              _pickerStateDetails.selectedRange.startDate != null) {
+            final dynamic updatedRange = _getSelectedRangeOnDragUpdate(
+                _pickerStateDetails.selectedRange, selectedDate);
+            if (DateRangePickerHelper.isRangeEquals(
+                _pickerStateDetails.selectedRange, updatedRange)) {
+              return;
+            }
+
+            //ここ！
+            if (widget.picker.selectionMode ==
+                DateRangePickerSelectionMode.multiple) {
+              _drawMultipleSelectionForMonth(updatedRange.startDate);
+            }
+            _pickerStateDetails.selectedRange = updatedRange;
+          } else {
             _pickerStateDetails.selectedRange = widget.picker.isHijri
                 ? HijriDateRange(selectedDate, null)
                 : PickerDateRange(selectedDate, null);
-          } else {
-            if (_pickerStateDetails.selectedRange != null &&
-                _pickerStateDetails.selectedRange.startDate != null) {
-              final dynamic updatedRange = _getSelectedRangeOnDragUpdate(
-                  _pickerStateDetails.selectedRange, selectedDate);
-              if (DateRangePickerHelper.isRangeEquals(
-                  _pickerStateDetails.selectedRange, updatedRange)) {
-                return;
-              }
-
-              //ここ！
-              _pickerStateDetails.selectedRange = updatedRange;
-            } else {
-              _pickerStateDetails.selectedRange = widget.picker.isHijri
-                  ? HijriDateRange(selectedDate, null)
-                  : PickerDateRange(selectedDate, null);
-            }
           }
+          // }
         }
         break;
       case DateRangePickerSelectionMode.multiRange:
